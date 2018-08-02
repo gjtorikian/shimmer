@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+<body>
+  <article class="vh-100 dt w-100 bg-dark-blue">
+    <div class="dtc v-mid tc light-gray ph3 ph4-l">
+      <p id="first" class="f6 f2-m f-subheadline-l fw6 tc times"></p>
+      <p id="second" class="f6 f2-m f-subheadline-l fw6 tc times"></p>
+    </div>
+  </article>
+</body>
+
+<script>
+
+let wof_letters = ['r', 's', 't', 'l', 'n', 'e']
+
+let first_text = `I remember him (I have no right to utter this sacred verb, only
+one man on earth had that right and he is dead) with a dark passion
+flower in his hand, seeing it as no one has ever seen it, though
+he might look at it from the twilight of dawn till that of evening, a
+whole lifetime. I remember him, with his face taciturn and
+Indian-like and singularly remote, behind the cigarette. I remember
+(I think) his angular, leather-braiding hands. I remember near
+those hands a mate gourd bearing the Uruguayan coat of arms; I
+remember a yellow screen with a vague lake landscape m the
+window of his house. I clearly remember his Voice: the slow,
+resentful, nasal voice of the old· time dweller of the suburbs, without
+the Italian sibilants we have today. I never saw him more than
+three times; the last was in 1887 ... I find it very satisfactory
+that all those who knew him should write about him; my testimony
+will perhaps be the shortest and no doubt the poorest, but
+not the most impartial in the volume you Will edit .. My deplorable
+status as an Argentine will prevent me from indulgmg m a dithyramb,
+an obligatory genre in Uruguay whenever the subject IS an
+Uruguayan. Highbrow, city slicker, dude: Funes never spoke th,:se
+injurious words, but I am sufficiently certain I rep:esented for him
+those misfortunes. Pedro Leandro Ipuche has wntten that Funes
+was a precursor of the supermen, "a vernacular and rustic Zarathustra'"
+I shall not debate the point, but one should not forget
+that he 'was also a kid from Fray Bentos, with certain incurable
+limitations.`
+
+let second_text = `My first memory of Funes is very perspicuous. I can see him on
+an afternoon in March or February of the year 1884- My father,
+that year, had taken me to spend the summer in Fray Bentos. I
+was returning from the San Francisco ranch with my cousin
+Bernardo Haedo. We were singing as we rode along and being on
+horseback was not the only circumstance determining my happiness.
+After a sultry day, an enormous slate-colored storm had
+hidden the sky. It was urged On by a southern wind, the trees
+were already going wild; I was afraid (I was hopeful) that the
+elemental rain would take us by surprise in the open. We were
+running a kind of race with the storm. We entered an aI1eyway
+that sank down between two very high brick sidewalks. It had
+suddenly got dark; I heard some rapid and almost secret footsteps
+up above; I raised my eyes and saw a boy running along the narrow
+and broken path as if it were a narrow and broken waI1. I
+remember his baggy gaucho trousers, his rope-soled shoes, I remember
+the cigarette in his hard face, against the now limitless
+storm cloud. Bernardo cried to him unexpectedly: "What time is
+it, Ireneo?" Without consulting the sky, without stopping, he replied:
+"It's four minutes to eight, young Bernardo Juan Francisco."
+His voice was shrm, mocking.`
+
+document.getElementById("first").innerHTML = first_text;
+document.getElementById("second").innerHTML = second_text;
+
+setInterval(function() {
+  let letter = wof_letters[Math.floor(Math.random()*wof_letters.length)];
+  first = first_text.replace(new RegExp(letter, 'g'), "*");
+  document.getElementById("first").innerHTML = first;
+  second = second_text.replace(new RegExp(letter, 'g'), "*");
+  document.getElementById("second").innerHTML = second;
+}, 500);
+
+</script>
+</html>
